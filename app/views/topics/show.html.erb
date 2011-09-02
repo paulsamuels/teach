@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<div id="topic_columns">
+  <div id="parental_linkages">
+  <% if @parental_linkages.empty? %>
+    <p><b>This topic is not linked from any other topics</b></p>
+  <% else %>
+    <p><b><%= @topic.title %> is linked to from these topics</b></p>
+    <table>
+      <% @parental_linkages.each do |linkage| %>
+        <tr>
+          <td><%= linkage.topic.title %></td>
+          <td><%= link_to "view", linkage.topic %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+  </div>
+
+  <div id="main_topic">
+    <h3 id="topic_title">
+      <%= image_tag @topic.icon.url :thumb %> 
+      <%= @topic.title %>
+    </h3>
+
+    <p>
+      <b>Body:</b>
+      <%= sanitize @topic.body %>
+    </p>
+
+    <p>
+      <b>Summary:</b>
+      <%= sanitize @topic.summary %>
+    </p>
+
+    <table>
+      <tr>
+        <td>Home screen</td>
+        <td><%= sanitize format_display_option(@topic.root) %></td>
+      </tr>
+      <tr>
+        <td>Full screen display</td>
+        <td><%= sanitize format_display_option(@topic.full_screen) %></td>
+      </tr>
+      <tr>
+        <td>Visible</td>
+        <td><%= sanitize format_display_option(@topic.visible) %></td>
+      </tr>
+    </table>
+    
+    <%= link_to 'Edit', edit_topic_path(@topic) %> |
+    <%= link_to 'Back', topics_path %>
+  </div>
+
+  <div id="child_linkages">
+  <% if @child_linkages.empty? %>
+    <p><b>This topic does not link to any other topics</b></p>
+  <% else %>
+    <h3><%= @topic.title %> links to these articles</h3>
+    <table>
+      <% @child_linkages.each do |linkage| %>
+        <tr>
+          <td><%= linkage.child.title %></td>
+          <td><%= link_to "view", linkage.child %> | <%= link_to "remove link", linkage, :method => :delete %></td>
+        </tr>
+      <% end %>
+    </table>
+  <% end %>
+  </div>
+
+  <% unless @linkable_topics.empty? %>
+    <div id="linkable">
+      <p><b>These articles can be linked to</b></p>
+      <table>
+        <% @linkable_topics.each do |topic| %>
+          <tr>
+            <td><%= topic.title %></td>
+            <td><%= link_to "view", topic %> | <%= link_to "add link", linkages_path(:topic_id => @topic, :child_id => topic), :method => :post %></td>
+          </tr>
+        <% end %>
+      </table>
+    </div>
+  <% end %>
+</div>

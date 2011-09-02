@@ -1,0 +1,44 @@
+<%= form_for(@topic, :html => { :multipart => true }) do |f| %>
+  <% if @topic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+
+      <ul>
+      <% @topic.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :summary %><br />
+    <%= f.text_area :summary, :size => "40x5" %>
+  </div>
+  <div class="field">
+    <%= f.label :body %><br />
+    <%= f.text_area :body %>
+  </div>
+  <div class="field">
+  <%= f.file_field :icon %>
+  </div>
+  <div class="field">
+    <%= f.label :root, "Display on the Home Screen?" %>
+    <%= f.check_box :root %>
+  </div>
+  <div class="field">
+    <%= f.label :full_screen, "Display this topic full screen? "%>
+    <%= f.check_box :full_screen %>
+  </div>
+  <div class="field">
+    <%= f.label :visible, "Should this topic be visible to users?"%>
+    <%= f.check_box :visible %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
