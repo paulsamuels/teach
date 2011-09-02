@@ -15,7 +15,7 @@ class Linkage < ActiveRecord::Base
   end
   
   def as_json(options={})
-    {:linkages =>
+    {:linkage =>
       {
         :topic_id => topic_id,
         :child_id => child_id,
