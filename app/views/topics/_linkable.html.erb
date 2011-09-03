@@ -1,0 +1,5 @@
+<tr>
+  <td class="center"><%= image_tag linkable.icon(:iphone) %></td>
+  <td><%= link_to linkable.title, linkable %></td>
+  <td class="center"><%= link_to "link", linkages_path(:topic_id => @topic, :child_id => linkable), :method => :post %></td>
+</tr>

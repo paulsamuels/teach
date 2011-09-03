@@ -1,0 +1,19 @@
+<div id="preview_group">
+  <h1>Parent Topics</h1>
+  <div id="parental_linkages" class="mock_phone">
+  <div class="mock_phone_title_bar">
+    <% if @parental_linkages.empty? %>
+      No Links Found
+    <% else %>
+      Accessible From
+    <% end %>
+  </div>
+  <% if @parental_linkages.empty? %>
+    <p><b>This topic is not linked from any other topics</b></p>
+  <% else %>
+    <table class="mock_phone_table">
+      <%= render :partial => "parental_linkage", :collection => @parental_linkages %>
+    </table>
+  <% end %>
+  </div>
+</div>

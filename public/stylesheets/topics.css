@@ -1,6 +1,8 @@
-body {
-  width: 1100px;
+#topic {
+  width: 1090px;
   margin: 0 auto;
+  padding: 10px 0 ;
+  overflow: hidden;
 }
 #topic_title > h1, #topic_title > img {
   display: inline-block;
@@ -9,30 +11,127 @@ body {
   display: inline-block;
   float: left;
   overflow: hidden;
+  margin: 0;
+}
+#preview_group {
+  padding: 0 20px 40px 20px;
+}
+#preview_group h1 {
+  color: #fff;
+}
+#preview_group.selected {
+  margin: -2px 0 0 0;
+  border: 2px dashed black;
+  background-color: #ededed;
+  color: #2f2f2f;
+}
+#preview_group.selected h1 {
+  color: #2f2f2f;
+}
+#preview_group > h1 {
+  text-align: center;
+}
+.preview_group_col {
+  width: 340px;
+  float: left;
+  overflow: hidden;
+}
+.mock_phone, .wide_mock_phone {
+  width: 320px;
+  height: 480px;
   border: 1px solid black;
-  padding: 5px;
+  overflow: auto;
+  background-color: #bdb8b0;
 }
-#parental_linkages, #child_linkages, #linkable {
-  width: 333px;
+.wide_mock_phone {
+  width: 1100px;
 }
-#main_topic {
-  width: 388px;
+.mock_phone_title_bar {
+  height: 41px;
+  border-top: 1px solid #a9a9a9;
+  border-bottom: 1px solid #b3b3b3;
+  background-image: url("../images/title_bar_gradient.png");
+  background-repeat: repeat-x;
+  text-align: center;
+  color: white;
+  line-height: 41px;
+  font-family: helvetica;
+  font-size: 18px;
 }
-#main_topic, #child_linkages {
-  margin: 0 0 0 -1px;
+.mock_phone_content {
+  overflow: auto;
 }
-#linkable {
-  margin: -1px 0 0 -1px;
+.mock_phone_web {
+  width: 280px;
+  padding: 20px;
 }
-#main_topic > h1 {
+.mock_phone_table, #linkable_options {
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+.mock_phone_table tr, #linkable_options tr {
+  padding: 0;
+  margin: 0;
+  height: 60px;
+  width: 100%;
+  background-image: url("../images/row_gradient.png");
+  background-repeat: repeat-x;
+}
+.mock_phone_table .center {
+  text-align: center;
+}
+.mock_phone_table tr a {
+  color: black;
+  text-decoration: none;
+  line-height: 60px;
+  font-family: helvetica;
+  font-size: 18px;
+}
+.mock_phone_table tr a:hover {
   text-decoration: underline;
 }
-#parental_linkages {
-  background: yellow;
+.mock_phone_table tr a.remove_link {
+  color: red;
+  font-size: 14px;
 }
-#child_linkages {
-  background: pink;
+.center {
+  text-align: center;
 }
 #linkable {
-  background: orange;
+  height: 300px;
+}
+#topic_index_table > tbody > tr > td {
+  padding: 20px;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  margin: 0;
+  border-collapse: collapse;
+}
+a.button_link {
+  text-decoration: none;
+  color: white;
+  display: inline-block;
+  background-image: url("../images/title_bar_gradient_invert.png");
+  background-repeat: repeat-x;
+  line-height: 41px;
+  padding: 0 5px;
+}
+a.button_link:hover {
+  background-image: url("../images/title_bar_gradient.png");
+  text-decoration: underline;
+}
+.left_float {
+  display: inline-block;
+  float: left;
+}
+.right_float {
+  display: inline-block;
+  float: right;
+}
+#linkable_topics {
+  clear: both;
+  margin: 20px 0;
 }

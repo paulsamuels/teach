@@ -7,8 +7,15 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
+  
+  <div id="horizontal_nav">
+    <%= link_to "TEACH", root_path %> |
+    <%= link_to "Topics", root_path %>
+  </div>
+  
+<div id="content">
+  <%= yield %>
+</div>
 
 </body>
 </html>

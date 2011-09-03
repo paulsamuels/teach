@@ -10,7 +10,7 @@ class Topic < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :body
   
-  has_attached_file :icon, :styles => { :thumb => "100x100>", :iphone => "500x500>" },
+  has_attached_file :icon, :styles => { :thumb => "100x100>", :iphone => "50x50>" },
     :url => "/images/:attachment/:id/:style/:basename.:extension",  
     :path => ":rails_root/public/images/:attachment/:id/:style/:basename.:extension"
   
@@ -22,6 +22,10 @@ class Topic < ActiveRecord::Base
       tmp = instance_variable_get("@#{ivar}")
       return tmp if tmp
       instance_variable_set("@#{ivar}", display_options & class_eval(ivar.upcase))
+    end
+    
+    define_method("#{ivar}?") do
+      self.send(ivar) > 0
     end
     
     define_method("#{ivar}=") do |value|

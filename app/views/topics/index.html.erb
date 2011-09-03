@@ -1,27 +1,46 @@
-<h1>Topics</h1>
+<div id="topic">
+  <div class="wide_mock_phone">
+    <div class="mock_phone_title_bar">All Topics</div>
+    <table id="topic_index_table">
+      <tbody>
+        <tr>
+          <th></th>
+          <th>Title</th>
+          <th>Body</th>
+          <th>Display Options</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
 
-<table>
-  <tr>
-    <th></th>
-    <th>Topics</th>
-    <th>Summary</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+      <% @topics.each do |topic| %>
+        <tr>
+          <td><%= image_tag topic.icon.url :thumb %></td>
+          <td><%= topic.title %></td>
+          <td><%= sanitize topic.body %></td>
+          <td><table>
+            <tr>
+              <td>Displayed on the home screen</td>
+              <td><%= sanitize format_display_option(topic.root?) %></td>
+            </tr>
+            <tr>
+              <td>Displays full screen</td>
+              <td><%= sanitize format_display_option(topic.full_screen?) %></td>
+            </tr>
+            <tr>
+              <td>Is visible to end users</td>
+              <td><%= sanitize format_display_option(topic.visible?) %></td>
+            </tr>
+          </table></td>
+          <td><%= link_to 'Show', topic %></td>
+          <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+          <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  </div>
+  <br />
 
-<% @topics.each do |topic| %>
-  <tr>
-    <td><%= image_tag topic.icon.url :thumb %></td>
-    <td><%= topic.title %></td>
-    <td><%= topic.summary %></td>
-    <td><%= link_to 'Show', topic %></td>
-    <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
-    <td><%= link_to 'Destroy', topic, :confirm => 'Are you sure?', :method => :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Topic', new_topic_path %>
+  <%= link_to 'New Topic', new_topic_path %>
+</div>
