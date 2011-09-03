@@ -1,6 +1,8 @@
 Teach::Application.routes.draw do
   resources :linkages
 
+  match 'topic_resource/:id' => 'topics#child_resource', :as => :topic_resource, :via => :post
+  
   resources :topics
   
   root :to => "topics#index"

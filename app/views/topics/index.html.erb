@@ -11,7 +11,7 @@
         </tr>
 
       <% @topics.each do |topic| %>
-        <tr>
+        <tr class="<%= topic.visible? ? 'active_topic' : 'deactive_topic' %>">
           <td class="row_icon"><%= image_tag topic.icon.url :iphone %></td>
           <td class="row_title"><%= topic.title %></td>
           <td class="row_title"><%= truncate(sanitize(topic.body)) %></td>

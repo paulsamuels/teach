@@ -1,5 +1,5 @@
 <tr>
   <td class="row_icon"><%= image_tag linkable.icon(:iphone) %></td>
   <td class="row_title"><%= link_to linkable.title, linkable %></td>
-  <td class="row_link"><%= button_to "link", linkages_path(:topic_id => @topic, :child_id => linkable), :method => :post  %></td>
+  <td class="row_link"><%= button_to "link", linkages_path(:topic_id => @topic, :child_id => linkable), :method => :post %></td>
 </tr>

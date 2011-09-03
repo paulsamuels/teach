@@ -16,4 +16,9 @@ $(document).ready(function() {
       $('#topic_links').show();
       return false;
     })
+    $('.related_links').click(function() {
+      $('#mock_phone_related_links').toggle();
+      $('.mock_phone_web').toggle();
+      return false;
+    })
 })

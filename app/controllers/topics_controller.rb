@@ -2,7 +2,7 @@ class TopicsController < ApplicationController
   # GET /topics
   # GET /topics.xml
   def index
-    @topics = Topic.root_topics.paginate(:page => params[:page], :per_page => 8)
+    @topics = Topic.visible_topics.paginate(:page => params[:page], :per_page => 8)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -38,6 +38,20 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
   end
 
+  def child_resource
+    topic = Topic.new(
+              :title           => "New resource",
+              :body            => "New resource",
+              :display_options => Topic::VISIBLE | Topic::ACTIVE | Topic::FULL_SCREEN
+            )
+    if topic.save
+      Linkage.create(:topic_id => params[:id], :child_id => topic.id)
+      redirect_to(edit_topic_path(topic))
+    else
+      redirect_to(topic_path(params[:id]), :notice => "Something prevented the creation of the resource")
+    end
+  end
+  
   # POST /topics
   # POST /topics.xml
   def create

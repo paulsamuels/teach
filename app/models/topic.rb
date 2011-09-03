@@ -53,8 +53,8 @@ class Topic < ActiveRecord::Base
     where(['display_options & ? AND display_options & ?', VISIBLE, ACTIVE])
   end
   
-  def self.root_topics
-    self.alive.where(['display_options & ?', ROOT])
+  def self.visible_topics
+    where(['display_options & ?', ACTIVE])
   end
   
   def as_json(options ={})

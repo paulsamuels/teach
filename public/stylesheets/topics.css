@@ -10,12 +10,12 @@
   background-color: white;
 }
 #topic_config {
-  background-color: #EDEDED;
+  background-color: #BDB8B0;
   border: 1px solid black;
   padding: 10px;
   margin: 0;
 }
-#topic_detail div, #topic_detail table {
+#topic_show_body, #topic_show_summary, #topic_detail table {
   background-color: white;
 }
 #topic_title > h1, #topic_title > img {
@@ -167,12 +167,9 @@
   max-height: 40px;
   overflow: hidden;
   text-align: center;
+  border-bottom: 1px solid black;
 }
-#topic_index_table td[2] {
-/*  max-width: 40px;*/
-  min-width: 1000px;
-}
-a.button_link {
+a.button_link, input.new_resource {
   border-radius: 15px;
   text-decoration: none;
   color: white;
@@ -180,11 +177,14 @@ a.button_link {
   background-image: url("../images/title_bar_gradient_invert.png");
   background-repeat: repeat-x;
   line-height: 41px;
+  height: 41px;
+  border: none;
   text-align: center;
   margin: 10px 0;
   width: 350px;
+  font-size: 14px;
 }
-a.button_link:hover {
+a.button_link:hover, input.new_resource:hover {
   background-image: url("../images/title_bar_gradient.png");
   text-decoration: underline;
 }
@@ -223,7 +223,7 @@ border-bottom: 1px solid #fff;
 background-color: #fff;
 }
 #topic_nav li.detail_tab.selected a, #topic_nav li.links_tab.selected a {
-  background-color: #EDEDED;
+  background-color: #BDB8B0;
   color: black;
   position: relative;
   top: 1px;
@@ -251,4 +251,10 @@ background: #fff;
 #topic_show_summary {
   overflow: auto;
   max-height: 100px;
+}
+tr.active_topic {
+  background-color: #b1d56b;
+}
+tr.deactive_topic {
+  background-color: #f2604b;
 }
