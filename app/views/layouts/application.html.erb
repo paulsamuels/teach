@@ -7,13 +7,15 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  
-  <div id="horizontal_nav">
-    <%= link_to "TEACH", root_path %> |
-    <%= link_to "Topics", root_path %>
+  <div id="top_bar">
+    <div id="horizontal_nav_wrapper">
+      <div id="horizontal_nav" class="main_column">
+        <%= link_to "Home", root_path %> |
+        <%= link_to "Topics", root_path %>
+      </div>
+    </div>
   </div>
-  
-<div id="content">
+<div id="content" class="main_column">
   <%= yield %>
 </div>
 

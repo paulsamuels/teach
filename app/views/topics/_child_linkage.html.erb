@@ -1,5 +1,5 @@
 <tr>
-  <td class="center"><%= image_tag child_linkage.child.icon(:iphone) %></td>
-  <td><%= link_to child_linkage.child.title, child_linkage.child %></td>
-  <td><%= link_to "remove", child_linkage, :method => :delete, :class => "remove_link" %></td>
+  <td class="row_icon"><%= image_tag child_linkage.child.icon(:iphone) %></td>
+  <td class="row_title"><%= link_to child_linkage.child.title, child_linkage.child %></td>
+  <td class="row_remove"><%= link_to "remove", child_linkage, :method => :delete, :class => "remove_link" %></td>
 </tr>

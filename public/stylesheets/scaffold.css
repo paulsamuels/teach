@@ -1,21 +1,40 @@
 body { 
-  background-color: #fff; 
+  background-color: #767676;
+  /*background-color: #ededed; */
   color: #333; 
-  width: 1100px;
-  margin: 0 auto;
   padding: 0;
+  margin: 0;
 }
-#content { background-color: #2f2f2f; }
-
-#horizontal_nav {
+#content { 
+  background-color: #ededed; 
+/*  background-color: #767676; */
+  border-bottom: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+.main_column {
+  width: 900px;
+  margin: 0 auto;
+}
+#top_bar {
   height: 41px;
-  line-height: 41px;
-  background-image: url("../images/title_bar_gradient_invert.png");
-  background-repeat: repeat-x;
-  padding: 0 30px;
+  background-color: #2f2f2f;
+/*  background-image: url("../images/title_bar_gradient_invert.png");*/
+/*  background-repeat: repeat-x;*/
+}
+#horizontal_nav_wrapper {
+  padding-top: 10px;
+}
+#horizontal_nav {
+  border-top: 1px solid white;
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  color: white;
 }
 #horizontal_nav a {
-  padding: 0 20px;
+  display: inline-block;
+  line-height: 31px;
+  padding: 0 10px;
   text-decoration: none;
   color: white;
   font-weight: bold;

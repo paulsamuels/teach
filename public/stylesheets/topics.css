@@ -1,23 +1,17 @@
 #topic {
-  width: 1090px;
+  width: 800px;
   margin: 0 auto;
-  padding: 10px 0 ;
+  padding: 20px 0 ;
   overflow: hidden;
 }
 #topic_title > h1, #topic_title > img {
   display: inline-block;
 }
 #topic_columns > div {
-  display: inline-block;
-  float: left;
   overflow: hidden;
-  margin: 0;
 }
 .preview_group {
   padding: 0 20px 40px 20px;
-}
-.preview_group h1 {
-  color: #fff;
 }
 .preview_group.selected {
   margin: -2px 0 0 0;
@@ -32,14 +26,15 @@
   text-align: center;
 }
 .preview_group_col {
-  width: 340px;
+  width: 370px;
   float: left;
   overflow: hidden;
 }
 .mock_phone, .wide_mock_phone, .tall_mock_phone {
   width: 320px;
   height: 480px;
-  border: 1px solid black;
+  border: 15px solid black;
+  border-radius: 15px;
   overflow: auto;
   background-color: #bdb8b0;
 }
@@ -78,23 +73,43 @@
   border-spacing: 0;
   border-collapse: collapse;
 }
-.mock_phone_table tr, #linkable_options tr {
-  padding: 0;
-  margin: 0;
-  height: 60px;
+.mock_phone_table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.mock_phone_table tr, #linkable_options {
+  height: 6px;
   width: 100%;
   background-image: url("../images/row_gradient.png");
   background-repeat: repeat-x;
 }
-.mock_phone_table .center {
-  text-align: center;
-}
-.mock_phone_table tr a {
-  color: black;
+.mock_phone_table a {
   text-decoration: none;
-  line-height: 60px;
   font-family: helvetica;
   font-size: 18px;
+}
+.row_icon {
+  overflow: hidden;
+  width: 55px;
+  height: 55px;
+}
+.row_icon img {
+  vertical-align: middle;
+  text-align: center;
+  width: 50px;
+  height: 50px;
+}
+.row_title, .row_title a {
+  color: black;
+  padding: 0 5px;
+  max-width:200px;
+}
+.row_remove, .row_remove {
+  max-width: 65px;
+  font-size: 14px;
+}
+.mock_phone_table .center {
+  text-align: center;
 }
 .mock_phone_table tr a:hover {
   text-decoration: underline;
@@ -117,13 +132,16 @@
   border-collapse: collapse;
 }
 a.button_link {
+  border-radius: 15px;
   text-decoration: none;
   color: white;
   display: inline-block;
   background-image: url("../images/title_bar_gradient_invert.png");
   background-repeat: repeat-x;
   line-height: 41px;
-  padding: 0 5px;
+  text-align: center;
+  margin: 10px 0;
+  width: 350px;
 }
 a.button_link:hover {
   background-image: url("../images/title_bar_gradient.png");
@@ -145,4 +163,23 @@ a.button_link:hover {
 }
 #topic_instructions {
   width: 600px;
+}
+#topic_nav {
+  text-align: left;
+  margin: 1em 0 1em 0;
+  border-bottom: 1px solid #2f2f2f;
+  list-style-type: none;
+  padding: 3px 10px 3px 10px;
+}
+
+#topic_nav li { /* do not change */
+  display: inline;
+}
+#topic_show_body {
+  overflow: auto;
+  max-height: 150px;
+}
+#topic_show_summary {
+  overflow: auto;
+  max-height: 100px;
 }

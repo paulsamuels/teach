@@ -1,13 +1,16 @@
 <div id="topic">
-  <p id="notice"><%= notice %></p>
+  <% if notice %>
+    <p id="notice"><%= notice %></p>
+  <% end %>
 
   <div id="topic_columns">
   
-    <%= render "parental_linkages_mock_phone" %>
+    <!-- <%= render "parental_linkages_mock_phone" %> -->
 
     <div class="preview_group selected">
       <h1><%= @topic.title %></h1>
       <div class="preview_group_col">
+        <%= link_to "Configure", edit_topic_path(@topic), :class => "button_link" %> 
         <div id="parental_linkages" class="mock_phone">
           <div class="mock_phone_title_bar"><%= @topic.title %></div>
           <div class="mock_phone_content">
@@ -25,10 +28,28 @@
           </div>
         </div>
       </div>
-    
+    <%= link_to_function "Click me" do |page| 
+      page.select('.preview_group_col').hide
+    end
+      %>
       <div class="preview_group_col">
+        <ul id="topic_nav">
+          <li>Details</li>
+          <li>Links</li>
+        </ul>
         <%= image_tag @topic.icon.url :thumb %>
-        <%= link_to "Configure", edit_topic_path(@topic), :class => "button_link right_float" %> 
+        <p>
+          <b>Body:</b>
+          <div id="topic_show_body">
+            <%= sanitize @topic.body %>
+          </div>
+        </p>
+        <p id="topic_show_summary">
+          <b>Summary:</b>
+          <div id="topic_show_summary">
+            <%= @topic.summary %>
+          </div>
+        </p>
         
         <table id="linkable_topics">
           <tr>
@@ -45,7 +66,7 @@
           </tr>
         </table>
       
-        <%= render :partial => "linkable_options" %>
+        <!-- <%= render :partial => "linkable_options" %> -->
       </div>
     </div>
   </div>
