@@ -13,22 +13,22 @@
   overflow: hidden;
   margin: 0;
 }
-#preview_group {
+.preview_group {
   padding: 0 20px 40px 20px;
 }
-#preview_group h1 {
+.preview_group h1 {
   color: #fff;
 }
-#preview_group.selected {
+.preview_group.selected {
   margin: -2px 0 0 0;
   border: 2px dashed black;
   background-color: #ededed;
   color: #2f2f2f;
 }
-#preview_group.selected h1 {
+.preview_group.selected h1 {
   color: #2f2f2f;
 }
-#preview_group > h1 {
+.preview_group > h1 {
   text-align: center;
 }
 .preview_group_col {
@@ -36,7 +36,7 @@
   float: left;
   overflow: hidden;
 }
-.mock_phone, .wide_mock_phone {
+.mock_phone, .wide_mock_phone, .tall_mock_phone {
   width: 320px;
   height: 480px;
   border: 1px solid black;
@@ -45,6 +45,12 @@
 }
 .wide_mock_phone {
   width: 1100px;
+}
+.tall_mock_phone {
+  height: 100%;
+}
+.tall_mock_phone_content {
+  padding: 5px;
 }
 .mock_phone_title_bar {
   height: 41px;
@@ -132,6 +138,11 @@ a.button_link:hover {
   float: right;
 }
 #linkable_topics {
+  width: 320px;
+  border: 1px solid black;
   clear: both;
   margin: 20px 0;
+}
+#topic_instructions {
+  width: 600px;
 }

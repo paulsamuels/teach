@@ -1,6 +1,17 @@
-<h1>Editing topic</h1>
+<div id="topic">
+  <div id="topic_columns">
+    <div class="preview_group">
+      <div class="tall_mock_phone">
+        <div class="mock_phone_title_bar">Editing topic</div>
+        <div class="tall_mock_phone_content">
+          <%= render 'form' %>
 
-<%= render 'form' %>
-
-<%= link_to 'Show', @topic %> |
-<%= link_to 'Back', topics_path %>
+          <%= link_to 'Show', @topic %>
+        </div>
+      </div>
+    </div>
+    
+    <%= render "topic_instructions" %>
+    
+  </div>
+</div>

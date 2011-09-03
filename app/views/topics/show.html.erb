@@ -30,7 +30,7 @@
         <%= image_tag @topic.icon.url :thumb %>
         <%= link_to "Configure", edit_topic_path(@topic), :class => "button_link right_float" %> 
         
-        <table id"linkable_topics">
+        <table id="linkable_topics">
           <tr>
             <td>Displayed on the home screen</td>
             <td><%= sanitize format_display_option(@topic.root?) %></td>
