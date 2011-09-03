@@ -83,6 +83,7 @@ GEM
       polyglot
       polyglot (>= 0.3.1)
     tzinfo (0.3.29)
+    will_paginate (3.0.0)
     yaml_db (0.2.1)
 
 PLATFORMS
@@ -95,4 +96,5 @@ DEPENDENCIES
   rails (= 3.0.7)
   rake (= 0.8.7)
   sqlite3
+  will_paginate (~> 3.0)
   yaml_db
