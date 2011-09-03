@@ -5,3 +5,4 @@ tmp/
 *deploy.rb
 *database.yml
 *images/icons
+*images/uploads

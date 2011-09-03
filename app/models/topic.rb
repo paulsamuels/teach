@@ -12,7 +12,7 @@ class Topic < ActiveRecord::Base
   
   has_attached_file :icon, :styles => { :thumb => "100x100>", :iphone => "50x50>" },
     :url => "/images/:attachment/:id/:style/:basename.:extension",  
-    :path => ":rails_root/public/images/:attachment/:id/:style/:basename.:extension"
+    :path => ":rails_root/public/images/uploads/:attachment/:id/:style/:basename.:extension"
   
 # Define getters/setters for display_options and constants
   %w[visible active root full_screen linkable].each_with_index do |ivar, index|
