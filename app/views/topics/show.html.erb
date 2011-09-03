@@ -71,7 +71,7 @@
                 <td><%= sanitize format_display_option(@topic.visible?) %></td>
               </tr>
             </table>
-            <%= link_to "Configure", edit_topic_path(@topic), :class => "button_link" %>
+            <%= link_to "Edit", edit_topic_path(@topic), :class => "button_link" %>
             <%= button_to "Create Resource for this Topic", topic_resource_path(@topic), :method => :post, :class => "new_resource" %>
           </div>
       

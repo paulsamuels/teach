@@ -21,4 +21,6 @@ $(document).ready(function() {
       $('.mock_phone_web').toggle();
       return false;
     })
+    
+    $("#topic_body").markItUp(mySettings);
 })
