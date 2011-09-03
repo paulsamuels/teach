@@ -1,8 +1,6 @@
-<% unless @linkable_topics.empty? %>
-  <div id="linkable" class="mock_phone">
-    <div class="mock_phone_title_bar">These articles can be linked to</div>
-    <table id="linkable_options">
-      <%= render :partial => "linkable", :collection => @linkable_topics %>
-    </table>
-  </div>
-<% end %>
+<div class="mock_phone_title_bar">These Topics can be linked to</div>
+<div class="linkable" class="mock_phone">
+  <table class="mock_phone_table">
+    <%= render :partial => "linkable", :collection => @linkable_topics %>
+  </table>
+</div>

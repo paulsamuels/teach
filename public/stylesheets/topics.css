@@ -4,6 +4,20 @@
   padding: 20px 0 ;
   overflow: hidden;
 }
+#notice {
+  display: block;
+  padding: 5px;
+  background-color: white;
+}
+#topic_config {
+  background-color: #EDEDED;
+  border: 1px solid black;
+  padding: 10px;
+  margin: 0;
+}
+#topic_detail div, #topic_detail table {
+  background-color: white;
+}
 #topic_title > h1, #topic_title > img {
   display: inline-block;
 }
@@ -77,8 +91,8 @@
   border-collapse: collapse;
   border-spacing: 0;
 }
-.mock_phone_table tr, #linkable_options {
-  height: 6px;
+.mock_phone_table tr {
+  height: 60px;
   width: 100%;
   background-image: url("../images/row_gradient.png");
   background-repeat: repeat-x;
@@ -104,7 +118,7 @@
   padding: 0 5px;
   max-width:200px;
 }
-.row_remove, .row_remove {
+.row_remove, .row_remove a, .row_link, .row_link a {
   max-width: 65px;
   font-size: 14px;
 }
@@ -118,11 +132,17 @@
   color: red;
   font-size: 14px;
 }
+.mock_phone_table tr a.add_link {
+  color: green;
+  font-size: 14px;
+}
 .center {
   text-align: center;
 }
-#linkable {
-  height: 300px;
+.linkable {
+  overflow: auto;
+  border: 1px solid black;
+  height: 175px;
 }
 #topic_index_table > tbody > tr > td {
   padding: 20px;
@@ -165,15 +185,42 @@ a.button_link:hover {
   width: 600px;
 }
 #topic_nav {
-  text-align: left;
-  margin: 1em 0 1em 0;
-  border-bottom: 1px solid #2f2f2f;
-  list-style-type: none;
-  padding: 3px 10px 3px 10px;
+  margin: 5px 0 0 0;
 }
-
-#topic_nav li { /* do not change */
+#topic_nav ul {
+  display: inline-block;
+  width: 100%;
+  list-style-type: none;
+  padding: 0px 10px 0px 0px;
+}
+#topic_nav li {
   display: inline;
+}
+li.detail_tab, li.links_tab {
+border-bottom: 1px solid #fff;
+background-color: #fff;
+}
+#topic_nav li.detail_tab.selected a, #topic_nav li.links_tab.selected a {
+  background-color: #EDEDED;
+  color: black;
+  position: relative;
+  top: 1px;
+  padding-top: 18px;
+}
+#topic_nav li a {
+  padding: 15px;
+  border: 1px solid #2f2f2f;
+  background-color: white;
+  color: black;
+  margin-right: 0px;
+  text-decoration: none;
+  border-bottom: none;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+ 
+#topic_nav a:hover {
+background: #fff;
 }
 #topic_show_body {
   overflow: auto;
