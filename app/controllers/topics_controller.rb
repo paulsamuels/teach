@@ -1,4 +1,7 @@
 class TopicsController < ApplicationController
+  
+  before_filter :logged_in
+  
   # GET /topics
   # GET /topics.xml
   def index

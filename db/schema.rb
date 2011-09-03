@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110902004439) do
+ActiveRecord::Schema.define(:version => 20110903231102) do
 
   create_table "linkages", :force => true do |t|
     t.integer  "topic_id"
@@ -31,6 +31,13 @@ ActiveRecord::Schema.define(:version => 20110902004439) do
     t.string   "icon_content_type"
     t.integer  "icon_file_size"
     t.datetime "icon_updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "password_hash"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

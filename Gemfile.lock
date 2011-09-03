@@ -29,6 +29,7 @@ GEM
       activesupport (= 3.0.7)
     activesupport (3.0.7)
     arel (2.0.10)
+    bcrypt-ruby (3.0.0)
     builder (2.1.2)
     capistrano (2.8.0)
       highline
@@ -36,6 +37,7 @@ GEM
       net-sftp (>= 2.0.0)
       net-ssh (>= 2.0.14)
       net-ssh-gateway (>= 1.1.0)
+    cocaine (0.2.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
     highline (1.6.2)
@@ -46,7 +48,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    mysql2 (0.2.6)
+    mysql2 (0.2.13)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -54,9 +56,11 @@ GEM
     net-ssh (2.2.1)
     net-ssh-gateway (1.1.0)
       net-ssh (>= 1.99.1)
-    paperclip (2.3.11)
+    paperclip (2.4.0)
       activerecord (>= 2.3.0)
       activesupport (>= 2.3.2)
+      cocaine (>= 0.0.2)
+      mime-types
     polyglot (0.3.2)
     rack (1.2.3)
     rack-mount (0.6.14)
@@ -90,6 +94,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt-ruby
   capistrano
   mysql2 (< 0.3)
   paperclip (~> 2.3)

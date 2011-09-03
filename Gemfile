@@ -5,6 +5,7 @@ gem 'rake', '0.8.7'
 gem "paperclip", "~> 2.3"
 gem 'capistrano'
 gem 'will_paginate', "~> 3.0"
+gem "bcrypt-ruby", :require => "bcrypt"
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

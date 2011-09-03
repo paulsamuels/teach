@@ -1,15 +1,7 @@
 <div id="topic">
-  <div id="topic_columns">
-    <div class="preview_group">
-      <div class="tall_mock_phone">
-        <div class="mock_phone_title_bar">New topic</div>
-        <div class="tall_mock_phone_content">
-        <%= render 'form' %>
+  <div class="mock_phone_title_bar">New topic</div>
+  <%= render 'form' %>
 
-        <%= link_to 'Back', topics_path %>
-        </div>
-      </div>
-    </div>
-    <%= render "topic_instructions" %>
-  </div>
+  <%= link_to 'Back', topics_path %>
+  <%= render "topic_instructions" %>
 </div>
