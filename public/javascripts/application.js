@@ -7,11 +7,13 @@ $(document).ready(function() {
       $('li.detail_tab').addClass('selected');
       $('#topic_detail').show();
       $('#topic_links').hide();
+      return false;
     })
     $('a.links_tab').click(function() {
       $('li.links_tab').addClass('selected');
       $('li.detail_tab').removeClass('selected');
       $('#topic_detail').hide();
       $('#topic_links').show();
+      return false;
     })
 })
