@@ -4,3 +4,4 @@ log/*.log
 tmp/
 *deploy.rb
 *database.yml
+*images/icons
