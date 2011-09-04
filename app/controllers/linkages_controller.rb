@@ -1,5 +1,9 @@
 class LinkagesController < ApplicationController
   
+  before_filter do |controller|
+    logged_in? unless controller.request.format.json?
+  end
+  
   def index
     @linkages = Linkage.all_after_date(params[:date])
     respond_to do |format|

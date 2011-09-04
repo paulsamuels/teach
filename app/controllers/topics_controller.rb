@@ -1,6 +1,8 @@
 class TopicsController < ApplicationController
   
-  before_filter :logged_in
+  before_filter do |controller|
+    logged_in? unless controller.request.format.json?
+  end
   
   # GET /topics
   # GET /topics.xml
