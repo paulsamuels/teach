@@ -1,6 +1,8 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
   
+  helper_method :logged_in?
+  
   private
 
   def current_user
@@ -10,8 +12,14 @@ class ApplicationController < ActionController::Base
   def logged_in?
     if current_user
       true
+    end
+  end
+  
+  def has_access?
+    if logged_in?
+      true
     else
-      redirect_to log_in_path
+      redirect_to log_in_url
     end
   end
 end

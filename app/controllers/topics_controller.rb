@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
   
   before_filter do |controller|
-    logged_in? unless controller.request.format.json?
+    has_access? unless controller.request.format.json?
   end
   
   # GET /topics

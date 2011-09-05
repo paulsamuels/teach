@@ -13,12 +13,13 @@
 </head>
 <body>
   <div id="top_bar">
+    <% if logged_in? %>
     <div id="horizontal_nav_wrapper">
       <div id="horizontal_nav" class="main_column">
-        <%= link_to "Home", root_path %> |
         <%= link_to "Topics", root_path %>
       </div>
     </div>
+    <% end %>
   </div>
 <div id="content" class="main_column">
   <%= yield %>
