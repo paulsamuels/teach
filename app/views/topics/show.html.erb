@@ -13,7 +13,7 @@
           <div class="mock_phone_content">
             <% if @topic.full_screen? %>
               <% unless @child_linkages.empty? %>
-              <div class="mock_phone_title_bar related_links"><%= pluralize(@topic.child_linkages.count, "Related Link") %></div>
+              <div class="mock_phone_tool_bar related_links"><%= pluralize(@topic.child_linkages.count, "Related Link") %></div>
                 <div id="mock_phone_related_links" style="display: none;">
                   <table class="mock_phone_table">
                     <%= render :partial => "child_linkage", :collection => @child_linkages %> 

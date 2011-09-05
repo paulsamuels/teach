@@ -3,13 +3,13 @@ a = Topic.create( :title => "Somersaults",
                   :body => "A Somersault involes a performer ...", 
                   :display_options => Topic::VISIBLE | Topic::ACTIVE | Topic::LINKABLE | Topic::ROOT
                 )
-b = Topic.create( :title => "Twisting Somersaults", 
+b = Topic.create( :title => "Twisting", 
                   :body => "Somersaults with twisting components can be forward or back ...", 
-                  :display_options => Topic::VISIBLE | Topic::ACTIVE | Topic::LINKABLE
+                  :display_options => Topic::VISIBLE | Topic::ACTIVE
                 )
-c = Topic.create( :title => "Non Twisting Somersaults", 
+c = Topic.create( :title => "Non Twisting", 
                   :body => "Somersaults with no twisting. These are normally backwards ...", 
-                  :display_options => Topic::VISIBLE | Topic::ACTIVE | Topic::FULL_SCREEN | Topic::LINKABLE
+                  :display_options => Topic::VISIBLE | Topic::ACTIVE | Topic::FULL_SCREEN
                 )
 d = Topic.create( :title => "Front Somersault", 
                   :body => "A Front Somersault involes a performer ...", 
