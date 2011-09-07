@@ -12,7 +12,8 @@ class Topic < ActiveRecord::Base
   
   has_attached_file :icon, :styles => { :thumb => "100x100>", :iphone => "50x50>" },
     :url => "/images/uploads/:attachment_:id_:style_:basename.:extension",  
-    :path => ":rails_root/public/images/uploads/:attachment_:id_:style_:basename.:extension"
+    :path => ":rails_root/public/images/uploads/:attachment_:id_:style_:basename.:extension",
+    :default_url => "/images/uploads/:style_missing.png"
   
 # Define getters/setters for display_options and constants
   %w[visible active root full_screen linkable].each_with_index do |ivar, index|
