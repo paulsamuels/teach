@@ -89,7 +89,7 @@ class TopicsController < ApplicationController
   # DELETE /topics/1.xml
   def destroy
     @topic = Topic.find(params[:id])
-    @topic.active = 0
+    @topic.display_options = 0
     @topic.save
     
     all_child_links = Linkage.where :child_id => @topic

@@ -1,8 +1,8 @@
 class Topic < ActiveRecord::Base
     
-  has_many  :child_linkages, :class_name => "Linkage", :foreign_key => "topic_id", :dependent => :destroy, :conditions => ['linkages.active = ?', true]          
+  has_many  :child_linkages, :class_name => "Linkage", :foreign_key => "topic_id", :conditions => ['linkages.active = ?', true]          
   has_many  :children, :through => :child_linkages
-  has_many  :parental_linkages, :class_name => "Linkage", :foreign_key => "child_id", :dependent => :destroy, :conditions => ['linkages.active = ?', true]   
+  has_many  :parental_linkages, :class_name => "Linkage", :foreign_key => "child_id", :conditions => ['linkages.active = ?', true]   
   has_many  :parents, :through => :parental_linkages, :source => :article
   
   before_save :assign_display_options
