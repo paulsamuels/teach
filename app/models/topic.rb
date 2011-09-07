@@ -11,8 +11,8 @@ class Topic < ActiveRecord::Base
   validates_presence_of :body
   
   has_attached_file :icon, :styles => { :thumb => "100x100>", :iphone => "50x50>" },
-    :url => "/images/:attachment/:id/:style/:basename.:extension",  
-    :path => ":rails_root/public/images/uploads/:attachment/:id/:style/:basename.:extension"
+    :url => "/images/uploads/:attachment_:id_:style_:basename.:extension",  
+    :path => ":rails_root/public/images/uploads/:attachment_:id_:style_:basename.:extension"
   
 # Define getters/setters for display_options and constants
   %w[visible active root full_screen linkable].each_with_index do |ivar, index|
@@ -35,9 +35,11 @@ class Topic < ActiveRecord::Base
   
   scope :linkable_topics, (
     lambda do |topic| 
-      linkages = topic.child_linkages
-      return Topic.where('id <> ? AND display_options & ?', topic, LINKABLE) if linkages.empty?
-      { :conditions => ['id <> ? AND id NOT IN (?) AND display_options & ?', topic, linkages.map(&:child_id), LINKABLE] }
+      puts child_ids = topic.child_linkages.map(&:child_id)  
+      puts parent_ids = topic.parental_linkages.map(&:topic_id)
+      linkages = child_ids + parent_ids
+      return Topic.where('id <> ? AND display_options & ? AND display_options & ?', topic, LINKABLE, ACTIVE) if linkages.empty?
+      { :conditions => ['id <> ? AND id NOT IN (?) AND display_options & ? AND display_options & ?', topic, linkages, LINKABLE, ACTIVE] }
     end
   )
           

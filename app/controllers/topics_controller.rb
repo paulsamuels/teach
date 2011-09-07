@@ -91,6 +91,12 @@ class TopicsController < ApplicationController
     @topic = Topic.find(params[:id])
     @topic.active = 0
     @topic.save
+    
+    all_child_links = Linkage.find_by_child_id(@topic)
+    all_child_links.delete unless all_child_links.nil?
+    
+    all_parental_links = Linkage.find_by_topic_id(@topic)
+    all_parental_links.delete unless all_parental_links.nil?
 
     respond_to do |format|
       format.html { redirect_to(topics_url) }
