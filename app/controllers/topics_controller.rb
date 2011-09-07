@@ -92,11 +92,11 @@ class TopicsController < ApplicationController
     @topic.active = 0
     @topic.save
     
-    all_child_links = Linkage.find_by_child_id(@topic)
-    all_child_links.delete unless all_child_links.nil?
+    all_child_links = Linkage.where :child_id => @topic
+    all_child_links.each { |record| record.active = false; record.save } unless all_child_links.nil?
     
-    all_parental_links = Linkage.find_by_topic_id(@topic)
-    all_parental_links.delete unless all_parental_links.nil?
+    all_parental_links = Linkage.where :topic_id => @topic
+    all_parental_links.each { |record| record.active = false; record.save } unless all_parental_links.nil?
 
     respond_to do |format|
       format.html { redirect_to(topics_url) }
