@@ -68,7 +68,8 @@ class Topic < ActiveRecord::Base
         :summary         => summary || "",
         :body            => body,
         :display_options => display_options,
-        :icon_file_name  => icon.url(:iphone)
+        :icon_file_name  => icon.url(:iphone),
+        :modified_time   => created_at > updated_at ? created_at.to_i : updated_at.to_i
       }
     }
   end
